@@ -1,0 +1,53 @@
+@mixin header() {
+  font-family: $primaryFontFamily;
+  font-size: 145.2px;
+  color: $primaryColor;
+}
+
+@mixin fourContent() {
+  font-family: $primaryFontFamily;
+  font-size: 45px;
+  line-height: 99.8px;
+  color: $primaryColor;
+}
+
+@mixin sectionHeading() {
+  font-family: $primaryFontFamily;
+  font-size: 40px;
+  line-height: 58px;
+  letter-spacing: 1.3px;
+  color: $primaryColor;
+}
+
+@mixin navigation {
+  font-family: $secondarFontfamily;
+  line-height: 29px;
+  letter-spacing: 1px;
+  color: $primaryColor;
+}
+
+@mixin paragraph() {
+  font-family: $secondarFontfamily;
+  font-size: 20px;
+  line-height: 29px;
+  letter-spacing: 1px;
+  color: $primaryColor;
+}
+
+@mixin button() {
+  font-family: $primaryFontFamily;
+  font-size: 25.4px;
+  text-align: center;
+  line-height: 41.6px;
+  color: $frenchBlueColor;
+  background: $secondaryColor;
+  display: inline-block;
+  padding: 5px 25px;
+}
+
+@mixin sectionHeadingBlog() {
+  font-family: $primaryFontFamily;
+  font-size: 121.5px;
+  line-height: 125.6px;
+  color: $primaryColor;
+}
