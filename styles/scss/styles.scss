@@ -55,6 +55,8 @@ header {
   background-image: url(../funplace-assets/home-header.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
   height: 100vh;
 }
 
@@ -62,7 +64,7 @@ nav ul {
   display: flex;
   padding-top: 30px;
   flex: 1 0 auto;
-  padding-left: 143px;
+  padding-left: 65px;
 }
 
 nav li {
@@ -95,7 +97,7 @@ nav a:hover {
 
 h1 {
   @include header();
-  padding-left: 143px;
+  padding-left: 75px;
 }
 
 .mainHeading img {
@@ -108,62 +110,6 @@ h1 {
 // Main
 
 // Section of New space, community, blog, get in touch
-
-// #fourContent {
-//   background: $sectionColor;
-//   height: auto;
-//   padding: 70px 0;
-// }
-
-// #fourContent h2 {
-//   @include fourContent();
-//   text-transform: uppercase;
-// }
-
-// .fourContent {
-//   height: 100%;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: flex-end;
-// }
-
-// .home,
-// .users,
-// .file,
-// .phone {
-//   font-size: 35px;
-//   color: $frenchBlueColor;
-//   background: $secondaryColor;
-//   width: 230px;
-//   height: 65px;
-//   border-radius: 50%;
-//   text-align: center;
-//   line-height: 65px;
-//   // padding: 30px;
-//   margin-top: 30px;
-//   margin-right: 20px;
-// }
-
-// #fourContent p {
-//   @include paragraph();
-// }
-
-// .information-1,
-// .information-2 {
-//   display: flex;
-//   justify-content: space-between;
-// }
-
-// .information-2 {
-//   padding-top: 30px;
-// }
-
-// .newSpace,
-// .community,
-// .blog,
-// .touch {
-//   display: flex;
-// }
 
 .thirdSection {
   background-color: $sectionColor;
@@ -211,8 +157,8 @@ h1 {
 
 #mainWrapper {
   background: $frenchBlueColor;
-  height: auto;
-  padding: 90px 0;
+  height: 100vh;
+  padding: 45px 0;
 }
 
 #mainWrapper h2 {
@@ -228,39 +174,61 @@ h1 {
   @include button();
 }
 
-.programs,
-.locations {
-  // display: flex;
-  position: relative;
+.btn:hover,
+.btn:focus {
+  background: $frenchBlueColor;
+  color: $primaryColor;
+  border: 3px solid $secondaryColor;
+}
+
+.programs {
+  display: flex;
 }
 
 .pragramsImage {
-  width: 40%;
-  position: absolute;
-  // top: -140px;
-  // top: -60px;
+  width: calc(45% - 100px);
+  margin-right: 100px;
+  position: relative;
+  top: -90px;
 }
 
 .pragramsImage img {
   box-shadow: 15px 15px $secondaryColor;
 }
 
-// .locationsImage {
-//   width: 40%;
-//   position: relative;
-//   right: 0;
-//   top: 140px;
-//   top: 50px;
-// }
+.programContent {
+  width: calc(50% - 50px);
+  margin-left: 50px;
+}
 
-// .locationsImage img {
-//   box-shadow: -15px 15px $secondaryColor;
-// }
+.programContent p {
+  width: 85%;
+}
 
-// .programContent,
-// .locationsContent {
-//   width: 40%;
-// }
+.locations {
+  display: flex;
+}
+
+.locationsContent {
+  width: calc(50% - 50px);
+  margin-right: 50px;
+  text-align: end;
+}
+
+.locationsContent p {
+  text-align: end;
+}
+
+.locationsImage {
+  width: calc(45% - 100px);
+  margin-left: 100px;
+  position: relative;
+  top: 2px;
+  right: 0;
+}
+.locationsImage img {
+  box-shadow: -15px 15px $secondaryColor;
+}
 
 //  Section of Road Trips
 
@@ -349,9 +317,289 @@ h1 {
 
 footer {
   background: $footerColor;
+  padding: 10px 0;
 }
 
 footer p {
   @include paragraph();
   text-align: center;
+}
+
+// BLOG POST CSS
+
+// header
+
+#blogHeader {
+  background-image: url(../funplace-assets/blog-header.jpg);
+}
+
+// main
+
+.mainContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background: $sectionColor;
+}
+
+// Section of new Activities
+
+#newActivities {
+  box-shadow: -2px 2px $secondaryColor;
+  width: 65%;
+}
+
+.newActivities {
+  position: relative;
+}
+
+.newActivitiesImage {
+  position: absolute;
+  top: -200px;
+  padding: 0 0 0 13px;
+}
+
+.newActivitiesImage img {
+  box-shadow: -15px 15px $secondaryColor;
+}
+
+.newActivitiesContent {
+  padding: 400px 75px 75px 75px;
+}
+
+.newActivitiesContent h2 {
+  @include sectionHeadingBlog();
+  padding-bottom: 15px;
+}
+
+.newActivitiesContent p {
+  @include paragraph();
+  padding-bottom: 25px;
+}
+
+// Comments
+
+#comments {
+  padding: 75px 75px 50px 75px;
+}
+
+.comments {
+  width: 65%;
+  float: right;
+}
+
+.comments h2 {
+  @include sectionHeadingBlog;
+}
+
+.comments p {
+  @include paragraph();
+}
+
+.comments h3 {
+  font-style: italic;
+  font-size: 25px;
+  font-weight: 700;
+  font-family: "Roboto", sans-serif;
+  line-height: 29px;
+  letter-spacing: 1px;
+  color: #f3faff;
+  padding-bottom: 20px;
+}
+
+.firstComment,
+.secondComment {
+  display: flex;
+  padding: 30px 0 50px 0;
+}
+
+.firstCommentImage {
+  width: 30%;
+  margin-right: 50px;
+}
+
+.secondCommentImage {
+  width: 30%;
+  margin-right: 50px;
+}
+
+// Form
+form {
+  padding: 0 75px 75px 75px;
+}
+
+.formContainer {
+  width: 65%;
+  float: right;
+  display: flex;
+  justify-content: space-between;
+}
+
+#name,
+#email {
+  width: calc(50% - 15px);
+  margin-right: 15px;
+  height: 40px;
+  margin-bottom: 40px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid $secondaryColor;
+  @include paragraph();
+  padding: 40px;
+  font-size: 25px;
+}
+
+#email {
+  margin-right: 0;
+}
+
+#message {
+  width: 65%;
+  float: right;
+  margin-bottom: 40px;
+  background-color: transparent;
+  border: none;
+  border: 2px solid $secondaryColor;
+  @include paragraph();
+  padding: 40px;
+  font-size: 25px;
+}
+
+.submit {
+  width: 65%;
+  float: right;
+  @include button();
+  background: $secondaryColor;
+  color: $frenchBlueColor;
+  border: 5px solid $secondaryColor;
+  padding: 5px 0;
+}
+
+.submit:hover,
+.submit:focus {
+  background: $frenchBlueColor;
+  color: $primaryColor;
+}
+
+// Aside
+
+aside {
+  width: 30%;
+  order: -1;
+}
+
+.asideContainer {
+  padding-top: 100px;
+  position: relative;
+  padding-left: 50px;
+  padding: 100px 0 0 50px;
+}
+
+.asideContainer img {
+  position: absolute;
+  left: -20px;
+  top: 80px;
+}
+
+.asideContainer h4 {
+  @include sectionHeading();
+  font-size: 35px;
+}
+
+.asideContainer p,
+.asideContainer li {
+  @include paragraph();
+}
+
+.combinedPara {
+  background: $frenchBlueColor;
+  padding-top: 395px;
+}
+
+.asidePara,
+.asidePara-2 {
+  padding: 0 60px 50px 15px;
+}
+
+.asidePara-2 {
+  padding-bottom: 30px;
+}
+
+.asidePara p {
+  padding-top: 20px;
+}
+
+.asidePara-2 ul {
+  // padding-left: 20px;
+  padding: 20px 0 0 20px;
+}
+
+.asidePara-2 li {
+  display: list-item;
+  list-style: disc;
+  padding: 0 0 15px 15px;
+}
+
+// Get in touch
+
+#touch {
+  background-image: url(../funplace-assets/contact-header.jpg);
+}
+
+// Form
+
+.touchContainer {
+  display: flex;
+  justify-content: center;
+  background: $sectionColor;
+}
+
+#formContainer {
+  width: 100%;
+  margin-left: 0;
+  padding: 50px;
+  width: 60%;
+  background: $frenchBlueColor;
+  box-shadow: 15px 15px $secondaryColor;
+  position: relative;
+  top: -170px;
+}
+
+#formContainer #name,
+#formContainer #email {
+  border-bottom: 2px solid $primaryColor;
+}
+
+#formContainer #message {
+  border: 2px solid $primaryColor;
+  width: 100%;
+}
+
+#formConatinar .submit {
+  width: 100%;
+}
+
+// Aside touch
+
+.touchAside {
+  padding-top: 100px;
+}
+
+.touchAside ul {
+  padding-bottom: 15px;
+  font-size: 25px;
+}
+
+.touchAside li {
+  padding-right: 10px;
+}
+
+.touchAside p {
+  padding-bottom: 20px;
+  @include paragraph();
+}
+
+.touchParaAside p {
+  padding-bottom: 5px;
+  @include paragraph();
 }

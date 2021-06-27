@@ -318,6 +318,8 @@ header {
   background-image: url(../funplace-assets/home-header.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
   height: 100vh;
 }
 
@@ -329,7 +331,7 @@ nav ul {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 auto;
           flex: 1 0 auto;
-  padding-left: 143px;
+  padding-left: 65px;
 }
 
 nav li {
@@ -372,7 +374,7 @@ h1 {
   font-family: "Walter Turncoat", cursive;
   font-size: 145.2px;
   color: #f3faff;
-  padding-left: 143px;
+  padding-left: 75px;
 }
 
 .mainHeading img {
@@ -440,8 +442,8 @@ h1 {
 
 #mainWrapper {
   background: #474bb5;
-  height: auto;
-  padding: 90px 0;
+  height: 100vh;
+  padding: 45px 0;
 }
 
 #mainWrapper h2 {
@@ -472,19 +474,67 @@ h1 {
   padding: 5px 25px;
 }
 
-.programs,
-.locations {
-  position: relative;
+.btn:hover,
+.btn:focus {
+  background: #474bb5;
+  color: #f3faff;
+  border: 3px solid #08fded;
+}
+
+.programs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .pragramsImage {
-  width: 40%;
-  position: absolute;
+  width: calc(45% - 100px);
+  margin-right: 100px;
+  position: relative;
+  top: -90px;
 }
 
 .pragramsImage img {
   -webkit-box-shadow: 15px 15px #08fded;
           box-shadow: 15px 15px #08fded;
+}
+
+.programContent {
+  width: calc(50% - 50px);
+  margin-left: 50px;
+}
+
+.programContent p {
+  width: 85%;
+}
+
+.locations {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.locationsContent {
+  width: calc(50% - 50px);
+  margin-right: 50px;
+  text-align: end;
+}
+
+.locationsContent p {
+  text-align: end;
+}
+
+.locationsImage {
+  width: calc(45% - 100px);
+  margin-left: 100px;
+  position: relative;
+  top: 2px;
+  right: 0;
+}
+
+.locationsImage img {
+  -webkit-box-shadow: -15px 15px #08fded;
+          box-shadow: -15px 15px #08fded;
 }
 
 #roadTrips {
@@ -594,6 +644,7 @@ h1 {
 
 footer {
   background: #044779;
+  padding: 10px 0;
 }
 
 footer p {
@@ -603,4 +654,328 @@ footer p {
   letter-spacing: 1px;
   color: #f3faff;
   text-align: center;
+}
+
+#blogHeader {
+  background-image: url(../funplace-assets/blog-header.jpg);
+}
+
+.mainContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  background: #03697c;
+}
+
+#newActivities {
+  -webkit-box-shadow: -2px 2px #08fded;
+          box-shadow: -2px 2px #08fded;
+  width: 65%;
+}
+
+.newActivities {
+  position: relative;
+}
+
+.newActivitiesImage {
+  position: absolute;
+  top: -200px;
+  padding: 0 0 0 13px;
+}
+
+.newActivitiesImage img {
+  -webkit-box-shadow: -15px 15px #08fded;
+          box-shadow: -15px 15px #08fded;
+}
+
+.newActivitiesContent {
+  padding: 400px 75px 75px 75px;
+}
+
+.newActivitiesContent h2 {
+  font-family: "Walter Turncoat", cursive;
+  font-size: 98.5px;
+  line-height: 125.6px;
+  color: #f3faff;
+  padding-bottom: 15px;
+}
+
+.newActivitiesContent p {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  line-height: 29px;
+  letter-spacing: 1px;
+  color: #f3faff;
+  padding-bottom: 25px;
+}
+
+#comments {
+  padding: 75px 75px 50px 75px;
+}
+
+.comments {
+  width: 65%;
+  float: right;
+}
+
+.comments h2 {
+  font-family: "Walter Turncoat", cursive;
+  font-size: 98.5px;
+  line-height: 125.6px;
+  color: #f3faff;
+}
+
+.comments p {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  line-height: 29px;
+  letter-spacing: 1px;
+  color: #f3faff;
+}
+
+.comments h3 {
+  font-style: italic;
+  font-size: 25px;
+  font-weight: 700;
+  font-family: "Roboto", sans-serif;
+  line-height: 29px;
+  letter-spacing: 1px;
+  color: #f3faff;
+  padding-bottom: 20px;
+}
+
+.firstComment,
+.secondComment {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 30px 0 50px 0;
+}
+
+.firstCommentImage {
+  width: 30%;
+  margin-right: 50px;
+}
+
+.secondCommentImage {
+  width: 30%;
+  margin-right: 50px;
+}
+
+form {
+  padding: 0 75px 75px 75px;
+}
+
+.formContainer {
+  width: 65%;
+  float: right;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#name,
+#email {
+  width: calc(50% - 15px);
+  margin-right: 15px;
+  height: 40px;
+  margin-bottom: 40px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #08fded;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  line-height: 29px;
+  letter-spacing: 1px;
+  color: #f3faff;
+  padding: 40px;
+  font-size: 25px;
+}
+
+#email {
+  margin-right: 0;
+}
+
+#message {
+  width: 65%;
+  float: right;
+  margin-bottom: 40px;
+  background-color: transparent;
+  border: none;
+  border: 2px solid #08fded;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  line-height: 29px;
+  letter-spacing: 1px;
+  color: #f3faff;
+  padding: 40px;
+  font-size: 25px;
+}
+
+.submit {
+  width: 65%;
+  float: right;
+  font-family: "Walter Turncoat", cursive;
+  font-size: 25.4px;
+  text-align: center;
+  line-height: 41.6px;
+  color: #474bb5;
+  background: #08fded;
+  display: inline-block;
+  padding: 5px 25px;
+  background: #08fded;
+  color: #474bb5;
+  border: 5px solid #08fded;
+  padding: 5px 0;
+}
+
+.submit:hover,
+.submit:focus {
+  background: #474bb5;
+  color: #f3faff;
+}
+
+aside {
+  width: 30%;
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1;
+}
+
+.asideContainer {
+  padding-top: 100px;
+  position: relative;
+  padding-left: 50px;
+  padding: 100px 0 0 50px;
+}
+
+.asideContainer img {
+  position: absolute;
+  left: -20px;
+  top: 80px;
+}
+
+.asideContainer h4 {
+  font-family: "Walter Turncoat", cursive;
+  font-size: 40px;
+  line-height: 58px;
+  letter-spacing: 1.3px;
+  color: #f3faff;
+  font-size: 35px;
+}
+
+.asideContainer p,
+.asideContainer li {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  line-height: 29px;
+  letter-spacing: 1px;
+  color: #f3faff;
+}
+
+.combinedPara {
+  background: #474bb5;
+  padding-top: 395px;
+}
+
+.asidePara,
+.asidePara-2 {
+  padding: 0 60px 50px 15px;
+}
+
+.asidePara-2 {
+  padding-bottom: 30px;
+}
+
+.asidePara p {
+  padding-top: 20px;
+}
+
+.asidePara-2 ul {
+  padding: 20px 0 0 20px;
+}
+
+.asidePara-2 li {
+  display: list-item;
+  list-style: disc;
+  padding: 0 0 15px 15px;
+}
+
+#touch {
+  background-image: url(../funplace-assets/contact-header.jpg);
+}
+
+.touchContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: #03697c;
+}
+
+#formContainer {
+  width: 100%;
+  margin-left: 0;
+  padding: 50px;
+  width: 60%;
+  background: #474bb5;
+  -webkit-box-shadow: 15px 15px #08fded;
+          box-shadow: 15px 15px #08fded;
+  position: relative;
+  top: -170px;
+}
+
+#formContainer #name,
+#formContainer #email {
+  border-bottom: 2px solid #f3faff;
+}
+
+#formContainer #message {
+  border: 2px solid #f3faff;
+  width: 100%;
+}
+
+#formConatinar .submit {
+  width: 100%;
+}
+
+.touchAside {
+  padding-top: 100px;
+}
+
+.touchAside ul {
+  padding-bottom: 15px;
+  font-size: 25px;
+}
+
+.touchAside li {
+  padding-right: 10px;
+}
+
+.touchAside p {
+  padding-bottom: 20px;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  line-height: 29px;
+  letter-spacing: 1px;
+  color: #f3faff;
+}
+
+.touchParaAside p {
+  padding-bottom: 5px;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  line-height: 29px;
+  letter-spacing: 1px;
+  color: #f3faff;
 }
