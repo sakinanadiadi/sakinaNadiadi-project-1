@@ -1238,13 +1238,21 @@ aside {
     padding-left: 75px;
   }
 }
-@media (max-width: 476px) {
-  .newActivitiesContent {
-    padding: 10px;
+@media (max-width: 537px) {
+  .mainHeadingBlog {
+    padding-top: 130px;
   }
 
-  .asidePara-2 ul {
-    padding-left: 30px;
+  .headerWrapperBlog nav {
+    top: -100px;
+  }
+
+  .headerWrapperBlog ul {
+    display: block;
+  }
+
+  .formContainer {
+    display: block;
   }
 
   #name {
@@ -1254,9 +1262,18 @@ aside {
   #email {
     width: 100%;
   }
+}
+@media (max-width: 476px) {
+  .mainHeadingBlog {
+    padding-top: 150px;
+  }
 
-  .formContainer {
-    display: block;
+  .newActivitiesContent {
+    padding: 10px;
+  }
+
+  .asidePara-2 ul {
+    padding-left: 30px;
   }
 }
 #touch {
@@ -1328,4 +1345,104 @@ aside {
   line-height: 29px;
   letter-spacing: 1px;
   color: #f3faff;
+}
+
+@media (max-width: 989px) {
+  .mainHeadingTouch h1 {
+    padding-left: 0;
+  }
+
+  .mainHeadingTouch {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+@media (max-width: 950px) {
+  .mainHeadingTouch h1 {
+    font-size: 130px;
+  }
+
+  .touchformContainer #name {
+    width: 100%;
+  }
+
+  .touchformContainer #email {
+    width: 100%;
+  }
+}
+@media (max-width: 908px) {
+  .mainHeadingTouch h1 {
+    padding-top: 70px;
+  }
+
+  .touchContainer {
+    display: block;
+    padding-top: 100px;
+  }
+
+  #formContainer {
+    width: 70%;
+    position: static;
+    height: 680px;
+    padding: 30px;
+    margin: 0 auto;
+    border: 2px solid #08fded;
+  }
+
+  #formContainer .submit {
+    width: 100%;
+  }
+
+  .touchContainer > aside:nth-child(2) {
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    padding-bottom: 50px;
+  }
+}
+@media (max-width: 892px) {
+  .mainHeadingTouch h1 {
+    font-size: 110px;
+    padding-top: 130px;
+  }
+}
+@media (max-width: 773px) {
+  .mainHeadingTouch h1 {
+    padding-top: 230px;
+  }
+}
+@media (max-width: 668px) {
+  .headerWrapperTouch nav {
+    top: -100px;
+  }
+
+  .headerWrapperTouch nav ul {
+    display: block;
+  }
+
+  .mainHeadingTouch h1 {
+    font-size: 80px;
+  }
+}
+@media (max-width: 540px) {
+  .mainHeadingTouch h1 {
+    font-size: 70px;
+  }
+
+  #formContainer {
+    width: 80%;
+  }
+}
+@media (max-width: 470px) {
+  .mainHeadingTouch h1 {
+    font-size: 60px;
+  }
+
+  #formContainer {
+    width: 85%;
+  }
 }
