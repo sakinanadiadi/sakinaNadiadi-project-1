@@ -301,6 +301,18 @@ section {
 img {
   width: 100%;
   display: block;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+}
+
+img:hover,
+img:focus {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-box-shadow: 2px 2px 5px grey, -2px -2px 5px grey;
+          box-shadow: 2px 2px 5px grey, -2px -2px 5px grey;
 }
 
 li {
@@ -344,12 +356,28 @@ nav a {
   letter-spacing: 1px;
   color: #f3faff;
   padding: 15px 25px;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
 }
 
 nav a:hover {
-  -webkit-text-decoration: underline solid #03697c 2px;
-          text-decoration: underline solid #03697c 2px;
-  text-underline-offset: 5px;
+  -webkit-text-decoration: underline solid #03697c 5px;
+          text-decoration: underline solid #03697c 5px;
+  text-underline-offset: 7px;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-box-shadow: 2px 2px 5px #f3faff, -2px -2px 5px #f3faff;
+          box-shadow: 2px 2px 5px #f3faff, -2px -2px 5px #f3faff;
+}
+
+#menuToogle {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
 }
 
 .hamburgerMenu {
@@ -392,12 +420,18 @@ h1 {
   width: 35%;
 }
 
-.thirdSection {
+.mainHeading img:hover,
+.mainHeading img:focus {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.fourLinkSection {
   background-color: #03697c;
   padding: 100px 0;
 }
 
-.thirdSection h2 {
+.fourLinkSection h2 {
   font-family: "Walter Turncoat", cursive;
   font-size: 45px;
   line-height: 99.8px;
@@ -405,7 +439,7 @@ h1 {
   text-transform: uppercase;
 }
 
-.thirdSection p {
+.fourLinkSection p {
   font-family: "Roboto", sans-serif;
   font-size: 20px;
   line-height: 29px;
@@ -413,7 +447,7 @@ h1 {
   color: #f3faff;
 }
 
-.thirdSection .information {
+.fourLinkSection .information {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -424,7 +458,7 @@ h1 {
       flex-wrap: wrap;
 }
 
-.thirdSection .information .infoContainer {
+.fourLinkSection .information .infoContainer {
   width: 50%;
   padding: 30px 15px;
   display: -webkit-box;
@@ -432,15 +466,53 @@ h1 {
   display: flex;
 }
 
-.thirdSection i {
+.fourLinkSection i {
   font-size: 2.5rem;
   color: #474bb5;
   background-color: #08fded;
   padding: 10px;
   border-radius: 50%;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
-.thirdSection a {
+.fourLinkSection i:hover,
+.fourLinkSection i:focus {
+  color: #f3faff;
+  -webkit-animation: shadow-drop-2-center 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+          animation: shadow-drop-2-center 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes shadow-drop-2-center {
+  0% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    -webkit-box-shadow: 0 0 10px 10px #f3faff;
+            box-shadow: 0 0 10px 10px #f3faff;
+  }
+  100% {
+    -webkit-transform: translateZ(50px);
+            transform: translateZ(50px);
+    -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.35);
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.35);
+  }
+}
+
+@keyframes shadow-drop-2-center {
+  0% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    -webkit-box-shadow: 0 0 10px 10px #f3faff;
+            box-shadow: 0 0 10px 10px #f3faff;
+  }
+  100% {
+    -webkit-transform: translateZ(50px);
+            transform: translateZ(50px);
+    -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.35);
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.35);
+  }
+}
+.fourLinkSection a {
   padding-top: 25px;
 }
 
@@ -480,6 +552,8 @@ h1 {
   background: #08fded;
   display: inline-block;
   padding: 5px 25px;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
 }
 
 .btn:hover,
@@ -487,8 +561,67 @@ h1 {
   background: #474bb5;
   color: #f3faff;
   border: 3px solid #08fded;
+  -webkit-animation: shake-bottom 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+          animation: shake-bottom 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
 }
 
+@-webkit-keyframes shake-bottom {
+  0%, 100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+  }
+  10% {
+    -webkit-transform: rotate(2deg);
+    transform: rotate(2deg);
+  }
+  20%, 40%, 60% {
+    -webkit-transform: rotate(-4deg);
+    transform: rotate(-4deg);
+  }
+  30%, 50%, 70% {
+    -webkit-transform: rotate(4deg);
+    transform: rotate(4deg);
+  }
+  80% {
+    -webkit-transform: rotate(-2deg);
+    transform: rotate(-2deg);
+  }
+  90% {
+    -webkit-transform: rotate(2deg);
+    transform: rotate(2deg);
+  }
+}
+
+@keyframes shake-bottom {
+  0%, 100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+  }
+  10% {
+    -webkit-transform: rotate(2deg);
+    transform: rotate(2deg);
+  }
+  20%, 40%, 60% {
+    -webkit-transform: rotate(-4deg);
+    transform: rotate(-4deg);
+  }
+  30%, 50%, 70% {
+    -webkit-transform: rotate(4deg);
+    transform: rotate(4deg);
+  }
+  80% {
+    -webkit-transform: rotate(-2deg);
+    transform: rotate(-2deg);
+  }
+  90% {
+    -webkit-transform: rotate(2deg);
+    transform: rotate(2deg);
+  }
+}
 .programs {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -650,6 +783,12 @@ h1 {
   margin-right: 0;
 }
 
+.imageGallery img:hover,
+.imageGallery img:focus {
+  -webkit-box-shadow: 10px 10px 10px #f3faff, -10px -10px 10px #f3faff;
+          box-shadow: 10px 10px 10px #f3faff, -10px -10px 10px #f3faff;
+}
+
 footer {
   background: #044779;
   padding: 10px 0;
@@ -753,12 +892,12 @@ footer p {
     width: 40%;
   }
 
-  .thirdSection .information .infoContainer {
+  .fourLinkSection .information .infoContainer {
     width: 100%;
     padding: 0;
   }
 
-  .thirdSection h2 {
+  .fourLinkSection h2 {
     font-size: 40px;
   }
 }
@@ -794,7 +933,15 @@ footer p {
   }
 
   .imageGallery img {
-    padding-bottom: 30px;
+    margin-bottom: 30px;
+  }
+
+  .imageGallery img:hover,
+.imageGallery img:focus {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-box-shadow: 2px 2px 5px #f3faff, -2px -2px 5px #f3faff;
+            box-shadow: 2px 2px 5px #f3faff, -2px -2px 5px #f3faff;
   }
 
   .imageGallery img:last-child {
@@ -851,6 +998,12 @@ footer p {
 .newActivitiesImage img {
   -webkit-box-shadow: -15px 15px #08fded;
           box-shadow: -15px 15px #08fded;
+}
+
+.newActivitiesImage img:hover,
+.newActivitiesImage img:focus {
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .newActivitiesContent {
@@ -918,13 +1071,19 @@ footer p {
 }
 
 .firstCommentImage {
-  width: 30%;
+  width: 35%;
   margin-right: 50px;
 }
 
 .secondCommentImage {
   width: 30%;
   margin-right: 50px;
+}
+
+.comments img:hover,
+.comments img:focus {
+  -webkit-box-shadow: 5px 5px 5px #f3faff, -5px -5px 5px #f3faff;
+          box-shadow: 5px 5px 5px #f3faff, -5px -5px 5px #f3faff;
 }
 
 form {
@@ -1001,8 +1160,38 @@ form {
 .submit:focus {
   background: #474bb5;
   color: #f3faff;
+  -webkit-animation: shake-bottom 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+          animation: shake-bottom 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
 }
 
+@keyframes shake-bottom {
+  0%, 100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+  }
+  10% {
+    -webkit-transform: rotate(2deg);
+    transform: rotate(2deg);
+  }
+  20%, 40%, 60% {
+    -webkit-transform: rotate(-4deg);
+    transform: rotate(-4deg);
+  }
+  30%, 50%, 70% {
+    -webkit-transform: rotate(4deg);
+    transform: rotate(4deg);
+  }
+  80% {
+    -webkit-transform: rotate(-2deg);
+    transform: rotate(-2deg);
+  }
+  90% {
+    -webkit-transform: rotate(2deg);
+    transform: rotate(2deg);
+  }
+}
 aside {
   width: 30%;
   -webkit-box-ordinal-group: 0;
@@ -1021,6 +1210,12 @@ aside {
   position: absolute;
   left: -20px;
   top: 80px;
+}
+
+.asideContainer img:hover,
+.asideContainer img:focus {
+  -webkit-box-shadow: 10px 10px 10px #f3faff, -10px -10px 10px #f3faff;
+          box-shadow: 10px 10px 10px #f3faff, -10px -10px 10px #f3faff;
 }
 
 .asideContainer h4 {
@@ -1312,7 +1507,7 @@ aside {
   width: 100%;
 }
 
-#formConatinar .submit {
+#submit {
   width: 100%;
 }
 
@@ -1326,7 +1521,7 @@ aside {
 }
 
 .touchAside li {
-  padding-right: 10px;
+  padding: 0 5px;
 }
 
 .touchAside p {
@@ -1347,6 +1542,31 @@ aside {
   color: #f3faff;
 }
 
+.touchAside i:active {
+  padding: 5px;
+}
+
+.touchAside li:hover,
+.touchAside li:focus {
+  background: #474bb5;
+  -webkit-animation: shadow-drop-2-center 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+          animation: shadow-drop-2-center 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes shadow-drop-2-center {
+  0% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-box-shadow: 0 0 0 0 transparent;
+    box-shadow: 0 0 5px 5px #08fded;
+  }
+  100% {
+    -webkit-transform: translateZ(50px);
+    transform: translateZ(50px);
+    -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.35);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.35);
+  }
+}
 @media (max-width: 989px) {
   .mainHeadingTouch h1 {
     padding-left: 0;
@@ -1393,7 +1613,7 @@ aside {
     border: 2px solid #08fded;
   }
 
-  #formContainer .submit {
+  .touchformContainer .submit {
     width: 100%;
   }
 
