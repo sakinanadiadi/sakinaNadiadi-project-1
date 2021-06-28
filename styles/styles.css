@@ -801,7 +801,7 @@ footer p {
     padding-bottom: 0;
   }
 }
-@media (max-width: 414px) {
+@media (max-width: 456px) {
   .mainHeading h1 {
     font-size: 70px;
     padding-left: 45px;
@@ -1069,6 +1069,196 @@ aside {
   padding: 0 0 15px 15px;
 }
 
+@media (max-width: 892px) {
+  .mainHeadingBlog h1 {
+    padding-left: 0;
+  }
+
+  .mainHeadingBlog {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding-top: 30px;
+  }
+
+  .mainContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .mainContainer h2 {
+    font-size: 72px;
+  }
+
+  #newActivities {
+    width: 75%;
+    margin: 0 auto;
+    -webkit-box-shadow: initial;
+            box-shadow: initial;
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+  }
+
+  .newActivities {
+    position: static;
+    border: 2px solid #08fded;
+  }
+
+  .newActivitiesImage {
+    position: static;
+    padding: 30px 30px 30px 48px;
+  }
+
+  .newActivitiesContent {
+    padding-top: 75px;
+  }
+
+  .newActivitiesContent p {
+    text-align: center;
+  }
+
+  .newActivitiesContent h2 {
+    text-align: center;
+  }
+
+  .mainWrappar h2 {
+    text-align: center;
+  }
+
+  aside {
+    width: 75%;
+    margin: 0 auto;
+    padding-bottom: 50px;
+  }
+
+  .asideContainer img {
+    position: static;
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px 0;
+  }
+
+  .asideContainer {
+    position: static;
+    padding: 0;
+    border: 2px solid #08fded;
+  }
+
+  .combinedPara {
+    padding: 50px 0;
+    text-align: center;
+  }
+
+  .asidePara,
+.asidePara-2 {
+    padding: 0;
+  }
+
+  .asidePara {
+    padding-bottom: 30px;
+  }
+
+  .asidePara-2 ul {
+    text-align: start;
+    padding-left: 210px;
+  }
+
+  #comments {
+    padding: 0;
+  }
+
+  .comments {
+    width: 100%;
+  }
+
+  .firstCommentImage,
+.secondCommentImage {
+    margin: 0 auto;
+    padding-bottom: 50px;
+  }
+
+  .firstComment,
+.secondComment {
+    display: block;
+    text-align: center;
+  }
+
+  .firstCommentPara p,
+.secondCommentPara p {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  form {
+    padding: 30px 0 100px 0;
+    width: 75%;
+    margin: 0 auto;
+  }
+
+  .formContainer {
+    width: 100%;
+  }
+
+  #message {
+    width: 100%;
+  }
+
+  .submit {
+    width: 100%;
+  }
+}
+@media (max-width: 765px) {
+  .mainHeadingBlog {
+    padding-top: 100px;
+  }
+
+  .mainContainer h2 {
+    font-size: 55px;
+  }
+
+  .combinedPara {
+    padding: 0 30px;
+  }
+
+  .asidePara-2 ul {
+    padding-left: 140px;
+  }
+}
+@media (max-width: 604px) {
+  .newActivitiesContent h2 {
+    line-height: 75px;
+  }
+
+  .asidePara-2 ul {
+    padding-left: 75px;
+  }
+}
+@media (max-width: 476px) {
+  .newActivitiesContent {
+    padding: 10px;
+  }
+
+  .asidePara-2 ul {
+    padding-left: 30px;
+  }
+
+  #name {
+    width: 100%;
+  }
+
+  #email {
+    width: 100%;
+  }
+
+  .formContainer {
+    display: block;
+  }
+}
 #touch {
   background-image: url(../funplace-assets/contact-header.jpg);
 }
