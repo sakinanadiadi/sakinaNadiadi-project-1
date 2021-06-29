@@ -17,6 +17,19 @@ body {
   font-size: 1.5rem;
 }
 
+.skip-link {
+  position: absolute;
+  left: -1000px;
+  top: 5px;
+  z-index: 999;
+  background: white;
+  color: black;
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
 .mainWrapper {
   width: 100%;
   margin: 0 auto;
@@ -81,32 +94,30 @@ nav li {
 nav a {
   @include navigation();
   padding: 15px 25px;
-
-  transition: transform 1s;
 }
 
 nav a:hover {
   text-decoration: underline solid $sectionColor 5px;
   text-underline-offset: 7px;
-
-  transform: scale(1.1);
-  box-shadow: 2px 2px 5px $primaryColor, -2px -2px 5px $primaryColor;
 }
 
-// #menuToogle {
-//   display: none;
-// }
+// sliding menu
 
-// .menu-icon {
-//   display: none;
-// }
+#menuToggle {
+  display: none;
+}
 
-.hamburgerMenu {
+.menu-icon {
+  display: none;
+  position: fixed;
+  z-index: 2;
   color: $primaryColor;
-  font-size: 50px;
-  text-align: end;
-  opacity: -1;
-  position: absolute;
+  top: 20px;
+  right: -20px;
+}
+
+.menu-icon i {
+  color: $primaryColor;
 }
 
 // Heading
@@ -479,20 +490,53 @@ footer p {
 }
 
 @media (max-width: 775px) {
-  nav {
-    opacity: -1;
-    position: absolute;
-  }
-
-  .headerWrapper ul {
+  .headerWrapper nav ul {
     display: block;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 1s ease-in-out;
+    padding-left: 0;
+    padding-top: 0;
+    height: auto;
+    width: 100%;
   }
 
-  .hamburgerMenu {
-    opacity: 1;
-    right: 40px;
-    top: 20px;
+  .sliding {
+    padding: 5px;
+    width: 100%;
+    @include button();
+    background: none;
+    color: $primaryColor;
+    text-align: center;
+    padding: 5px 15px;
   }
+
+  .sliding:hover,
+  .sliding:focus {
+    border-bottom: 2px solid $primaryColor;
+  }
+
+  .menu-icon {
+    width: 100px;
+    height: inherit;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    line-height: 60px;
+  }
+
+  #menuToggle:checked ~ ul {
+    max-height: 350px;
+    background: $sectionColor;
+    opacity: 0.8;
+  }
+
+  .menu-icon i {
+    font-size: 1.7em;
+  }
+
+  // -----
 
   .mainHeading h1 {
     font-size: 90px;
@@ -501,6 +545,7 @@ footer p {
 
   .mainHeading img {
     width: 40%;
+    bottom: -100px;
   }
 
   .fourLinkSection .information .infoContainer {
@@ -974,6 +1019,15 @@ aside {
   }
 }
 
+@media (max-width: 775px) {
+  .headerWrapperBlog nav ul {
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s;
+  }
+}
+
 @media (max-width: 765px) {
   .mainHeadingBlog {
     padding-top: 100px;
@@ -1190,6 +1244,15 @@ aside {
   .mainHeadingTouch h1 {
     font-size: 110px;
     padding-top: 130px;
+  }
+}
+
+@media (max-width: 775px) {
+  .headerWrapperTouch nav ul {
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s;
   }
 }
 

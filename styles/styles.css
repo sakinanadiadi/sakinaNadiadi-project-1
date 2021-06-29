@@ -282,6 +282,19 @@ body {
   font-size: 1.5rem;
 }
 
+.skip-link {
+  position: absolute;
+  left: -1000px;
+  top: 5px;
+  z-index: 999;
+  background: white;
+  color: black;
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
 .mainWrapper {
   width: 100%;
   margin: 0 auto;
@@ -356,36 +369,29 @@ nav a {
   letter-spacing: 1px;
   color: #f3faff;
   padding: 15px 25px;
-  -webkit-transition: -webkit-transform 1s;
-  transition: -webkit-transform 1s;
-  transition: transform 1s;
-  transition: transform 1s, -webkit-transform 1s;
 }
 
 nav a:hover {
   -webkit-text-decoration: underline solid #03697c 5px;
           text-decoration: underline solid #03697c 5px;
   text-underline-offset: 7px;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  -webkit-box-shadow: 2px 2px 5px #f3faff, -2px -2px 5px #f3faff;
-          box-shadow: 2px 2px 5px #f3faff, -2px -2px 5px #f3faff;
 }
 
-#menuToogle {
+#menuToggle {
   display: none;
 }
 
 .menu-icon {
   display: none;
+  position: fixed;
+  z-index: 2;
+  color: #f3faff;
+  top: 20px;
+  right: -20px;
 }
 
-.hamburgerMenu {
+.menu-icon i {
   color: #f3faff;
-  font-size: 50px;
-  text-align: end;
-  opacity: -1;
-  position: absolute;
 }
 
 .headerWrapper {
@@ -868,19 +874,58 @@ footer p {
   }
 }
 @media (max-width: 775px) {
-  nav {
-    opacity: -1;
-    position: absolute;
-  }
-
-  .headerWrapper ul {
+  .headerWrapper nav ul {
     display: block;
+    max-height: 0;
+    overflow: hidden;
+    -webkit-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+    padding-left: 0;
+    padding-top: 0;
+    height: auto;
+    width: 100%;
   }
 
-  .hamburgerMenu {
-    opacity: 1;
-    right: 40px;
-    top: 20px;
+  .sliding {
+    padding: 5px;
+    width: 100%;
+    font-family: "Walter Turncoat", cursive;
+    font-size: 25.4px;
+    text-align: center;
+    line-height: 41.6px;
+    color: #474bb5;
+    background: #08fded;
+    display: inline-block;
+    padding: 5px 25px;
+    background: none;
+    color: #f3faff;
+    text-align: center;
+    padding: 5px 15px;
+  }
+
+  .sliding:hover,
+.sliding:focus {
+    border-bottom: 2px solid #f3faff;
+  }
+
+  .menu-icon {
+    width: 100px;
+    height: inherit;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    line-height: 60px;
+  }
+
+  #menuToggle:checked ~ ul {
+    max-height: 350px;
+    background: #03697c;
+    opacity: 0.8;
+  }
+
+  .menu-icon i {
+    font-size: 1.7em;
   }
 
   .mainHeading h1 {
@@ -890,6 +935,7 @@ footer p {
 
   .mainHeading img {
     width: 40%;
+    bottom: -100px;
   }
 
   .fourLinkSection .information .infoContainer {
@@ -1407,6 +1453,15 @@ aside {
     width: 100%;
   }
 }
+@media (max-width: 775px) {
+  .headerWrapperBlog nav ul {
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    -webkit-transition: max-height 0.3s;
+    transition: max-height 0.3s;
+  }
+}
 @media (max-width: 765px) {
   .mainHeadingBlog {
     padding-top: 100px;
@@ -1628,6 +1683,15 @@ aside {
   .mainHeadingTouch h1 {
     font-size: 110px;
     padding-top: 130px;
+  }
+}
+@media (max-width: 775px) {
+  .headerWrapperTouch nav ul {
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    -webkit-transition: max-height 0.3s;
+    transition: max-height 0.3s;
   }
 }
 @media (max-width: 773px) {

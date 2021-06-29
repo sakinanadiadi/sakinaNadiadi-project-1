@@ -28,22 +28,23 @@
     <title>Blog Fun Place</title>
   </head>
   <body>
+    <a href="#maincontent" class="skip-link">Skip to main content.</a>
     <!-- Header -->
     <header id="blogHeader">
       <div class="mainWrapper headerWrapperBlog">
         <!-- Navbar -->
         <nav>
+          <input type="checkbox" id="menuToggle" />
+          <label for="menuToggle" class="menu-icon"
+            ><i class="fa fa-bars"></i
+          ></label>
           <ul>
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#blog">Blog</a></li>
-            <li><a href="./getInTouch.html">Contact</a></li>
+            <li><a class="sliding" href="./index.html">Home</a></li>
+            <li><a class="sliding" href="#about">About</a></li>
+            <li><a class="sliding" href="#blog">Blog</a></li>
+            <li><a class="sliding" href="./getInTouch.html">Contact</a></li>
           </ul>
         </nav>
-
-        <div class="hamburgerMenu">
-          <i class="fas fa-bars"></i>
-        </div>
 
         <!-- Heading -->
         <div class="mainHeadingBlog">
