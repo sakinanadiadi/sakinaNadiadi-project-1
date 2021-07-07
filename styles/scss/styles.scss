@@ -80,10 +80,14 @@ header {
   height: 100vh;
 }
 
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
 nav ul {
   display: flex;
   padding-top: 30px;
-  flex: 1 0 auto;
   padding-left: 65px;
 }
 
@@ -96,27 +100,29 @@ nav a {
   padding: 15px 25px;
 }
 
-nav a:hover {
-  text-decoration: underline solid $sectionColor 5px;
+nav a:hover,
+nav a:focus {
+  text-decoration: underline solid $secondaryColor 5px;
   text-underline-offset: 7px;
 }
 
-// sliding menu
-
-#menuToggle {
+.hamburger {
   display: none;
+  padding-top: 30px;
+  padding-right: 50px;
 }
 
-.menu-icon {
-  display: none;
-  position: fixed;
-  z-index: 2;
-  color: $primaryColor;
-  top: 20px;
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  transition: all 0.3s ease-in-out;
+  background-color: $primaryColor;
 }
 
-.menu-icon i {
-  color: $primaryColor;
+.hamburger .bar:first-child {
+  margin-top: 0;
 }
 
 // Heading
@@ -489,51 +495,68 @@ footer p {
 }
 
 @media (max-width: 775px) {
-  .headerWrapper nav ul {
-    display: block;
-    max-height: 0;
-    overflow: hidden;
-    transition: all 1s ease-in-out;
+  nav {
+    justify-content: end;
+  }
+
+  nav a:hover,
+  nav a:focus {
+    text-decoration: none;
+  }
+
+  nav ul {
+    position: fixed;
+    left: 100%;
+    flex-direction: column;
+    background-color: $sectionColor;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    z-index: 1;
+    opacity: 0.9;
     padding-left: 0;
-    padding-top: 0;
-    height: auto;
-    width: 100%;
+    padding-bottom: 30px;
+    border: 2px solid $primaryColor;
   }
 
-  .sliding {
-    padding: 5px;
-    width: 100%;
-    @include button();
-    background: none;
-    color: $primaryColor;
-    text-align: center;
-    padding: 5px 15px;
+  nav ul.active {
+    left: 0;
   }
 
-  .sliding:hover,
-  .sliding:focus {
-    border-bottom: 2px solid $primaryColor;
+  nav ul li {
+    margin: 25px auto;
+    width: 85%;
   }
 
-  .menu-icon {
-    width: 100px;
-    height: inherit;
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    line-height: 60px;
-    text-align: center;
-  }
-
-  #menuToggle:checked ~ ul {
-    max-height: 350px;
-    background: $sectionColor;
+  nav ul li:hover,
+  nav ul li:focus {
+    border-bottom: 2px solid $secondaryColor;
     opacity: 0.8;
   }
 
-  .menu-icon i {
-    font-size: 1.7em;
+  nav a {
+    @include button();
+    background-color: $sectionColor;
+    color: $primaryColor;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    z-index: 1;
+    position: fixed;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
   }
 
   .mainHeading h1 {
@@ -1017,15 +1040,6 @@ aside {
   }
 }
 
-@media (max-width: 775px) {
-  .headerWrapperBlog nav ul {
-    display: block;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s;
-  }
-}
-
 @media (max-width: 765px) {
   .mainHeadingBlog {
     padding-top: 100px;
@@ -1242,15 +1256,6 @@ aside {
   .mainHeadingTouch h1 {
     font-size: 110px;
     padding-top: 130px;
-  }
-}
-
-@media (max-width: 775px) {
-  .headerWrapperTouch nav ul {
-    display: block;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s;
   }
 }
 

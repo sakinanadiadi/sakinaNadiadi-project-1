@@ -348,14 +348,20 @@ header {
   height: 100vh;
 }
 
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   padding-top: 30px;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 auto;
-          flex: 1 0 auto;
   padding-left: 65px;
 }
 
@@ -371,26 +377,31 @@ nav a {
   padding: 15px 25px;
 }
 
-nav a:hover {
-  -webkit-text-decoration: underline solid #03697c 5px;
-          text-decoration: underline solid #03697c 5px;
+nav a:hover,
+nav a:focus {
+  -webkit-text-decoration: underline solid #08fded 5px;
+          text-decoration: underline solid #08fded 5px;
   text-underline-offset: 7px;
 }
 
-#menuToggle {
+.hamburger {
   display: none;
+  padding-top: 30px;
+  padding-right: 50px;
 }
 
-.menu-icon {
-  display: none;
-  position: fixed;
-  z-index: 2;
-  color: #f3faff;
-  top: 20px;
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #f3faff;
 }
 
-.menu-icon i {
-  color: #f3faff;
+.hamburger .bar:first-child {
+  margin-top: 0;
 }
 
 .headerWrapper {
@@ -873,21 +884,52 @@ footer p {
   }
 }
 @media (max-width: 775px) {
-  .headerWrapper nav ul {
-    display: block;
-    max-height: 0;
-    overflow: hidden;
-    -webkit-transition: all 1s ease-in-out;
-    transition: all 1s ease-in-out;
-    padding-left: 0;
-    padding-top: 0;
-    height: auto;
-    width: 100%;
+  nav {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
   }
 
-  .sliding {
-    padding: 5px;
+  nav a:hover,
+nav a:focus {
+    text-decoration: none;
+  }
+
+  nav ul {
+    position: fixed;
+    left: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background-color: #03697c;
     width: 100%;
+    text-align: center;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    z-index: 1;
+    opacity: 0.9;
+    padding-left: 0;
+    padding-bottom: 30px;
+    border: 2px solid #f3faff;
+  }
+
+  nav ul.active {
+    left: 0;
+  }
+
+  nav ul li {
+    margin: 25px auto;
+    width: 85%;
+  }
+
+  nav ul li:hover,
+nav ul li:focus {
+    border-bottom: 2px solid #08fded;
+    opacity: 0.8;
+  }
+
+  nav a {
     font-family: "Walter Turncoat", cursive;
     font-size: 25.4px;
     text-align: center;
@@ -896,36 +938,29 @@ footer p {
     background: #08fded;
     display: inline-block;
     padding: 5px 25px;
-    background: none;
+    background-color: #03697c;
     color: #f3faff;
-    text-align: center;
-    padding: 5px 15px;
   }
 
-  .sliding:hover,
-.sliding:focus {
-    border-bottom: 2px solid #f3faff;
-  }
-
-  .menu-icon {
-    width: 100px;
-    height: inherit;
+  .hamburger {
     display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    line-height: 60px;
-    text-align: center;
+    cursor: pointer;
+    z-index: 1;
+    position: fixed;
   }
 
-  #menuToggle:checked ~ ul {
-    max-height: 350px;
-    background: #03697c;
-    opacity: 0.8;
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
   }
 
-  .menu-icon i {
-    font-size: 1.7em;
+  .hamburger.active .bar:nth-child(1) {
+    -webkit-transform: translateY(8px) rotate(45deg);
+            transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    -webkit-transform: translateY(-8px) rotate(-45deg);
+            transform: translateY(-8px) rotate(-45deg);
   }
 
   .mainHeading h1 {
@@ -1453,15 +1488,6 @@ aside {
     width: 100%;
   }
 }
-@media (max-width: 775px) {
-  .headerWrapperBlog nav ul {
-    display: block;
-    max-height: 0;
-    overflow: hidden;
-    -webkit-transition: max-height 0.3s;
-    transition: max-height 0.3s;
-  }
-}
 @media (max-width: 765px) {
   .mainHeadingBlog {
     padding-top: 100px;
@@ -1683,15 +1709,6 @@ aside {
   .mainHeadingTouch h1 {
     font-size: 110px;
     padding-top: 130px;
-  }
-}
-@media (max-width: 775px) {
-  .headerWrapperTouch nav ul {
-    display: block;
-    max-height: 0;
-    overflow: hidden;
-    -webkit-transition: max-height 0.3s;
-    transition: max-height 0.3s;
   }
 }
 @media (max-width: 773px) {
