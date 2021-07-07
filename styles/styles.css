@@ -665,6 +665,73 @@ h1 {
   width: 85%;
 }
 
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+}
+
+.modalContent {
+  background: #474bb5;
+  margin: 100px auto;
+  padding: 20px;
+  border: 2px solid #f3faff;
+  -webkit-box-shadow: 10px 10px #f3faff;
+          box-shadow: 10px 10px #f3faff;
+  width: 60%;
+  -webkit-animation-name: animatetop;
+          animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+          animation-duration: 0.4s;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+.close {
+  color: #f3faff;
+  float: right;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #03697c;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modalHeader {
+  padding: 2px 16px;
+}
+
+.modal-body {
+  padding: 2px 16px;
+}
+
 .locations {
   display: -webkit-box;
   display: -ms-flexbox;

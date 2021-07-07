@@ -309,6 +309,66 @@ h1 {
   width: 85%;
 }
 
+// modal
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+}
+
+.modalContent {
+  background: $frenchBlueColor;
+  margin: 100px auto;
+  padding: 20px;
+  border: 2px solid $primaryColor;
+  box-shadow: 10px 10px $primaryColor;
+  width: 60%;
+
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+
+/* Add Animation */
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.close {
+  color: $primaryColor;
+  float: right;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: $sectionColor;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modalHeader {
+  padding: 2px 16px;
+}
+
+.modal-body {
+  padding: 2px 16px;
+}
+
+// ..............................
+
 .locations {
   display: flex;
 }
