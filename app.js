@@ -13,8 +13,8 @@ function mobileMenu() {
 // Get the modal
 const modal = document.querySelector("#myModal");
 
-// Get the button that opens the modal
-const btn = document.querySelector(".programContent .btn");
+//the button t0 opens the modal
+const btn = document.querySelector(".btn");
 
 // When the user clicks on the button, open the modal
 btn.addEventListener("click", function (e) {
